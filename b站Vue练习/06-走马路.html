@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="lang">浪起来</button>
+        <button>停止</button>
+       <p>{{my}}</p>
+    </div>
+    <script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+           my:'这是走啊走，我们一起飞？一个标题'
+        },
+        methods:{
+           
+        lang(){
+            var _this=this
+            setInterval(
+            function(){
+            var start=_this.my.substring(0,1)
+            var end=_this.my.substring(1)
+            _this.my=end+start
+            }
+        , 1000);
+       
+        }
+        }
+    })
+    </script>
+</body>
+</html>

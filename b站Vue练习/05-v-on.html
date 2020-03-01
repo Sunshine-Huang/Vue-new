@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-on可以简写为一个 @ 符号 -->
+       <button v-bind:title="mytitle" type="button"  v-on:mouseover="show">按钮</button>
+    </div>
+    <script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+           mytitle:'这是一个标题'
+        },
+        methods:{
+            show:function(){
+                alert("你好")
+            }
+        }
+    })
+    </script>
+</body>
+</html>
